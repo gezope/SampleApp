@@ -12,4 +12,8 @@ class PagesController < ApplicationController
     @title = "Contact"
   end
 
+  def help
+    @time = "Help"
+  end
+
 end
