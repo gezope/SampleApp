@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   end
 
   def help
-    @time = "Help"
+    @title = "Help"
   end
 
 end
