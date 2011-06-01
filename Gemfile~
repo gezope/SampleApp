@@ -4,12 +4,21 @@ gem 'rails', '3.0.5'
 gem 'sqlite3'
 
 group :test, do 
+    if RUBY_VERSION =~ /1.9/ 
+      gem 'ruby-debug19' 
+    else 
+      gem 'ruby-debug'
+    end 
   gem 'rspec', '2.5.0'
   gem 'webrat'
-  gem 'spork'
 end
 
 group :development, do
+    if RUBY_VERSION =~ /1.9/ 
+      gem 'ruby-debug19' 
+    else 
+      gem 'ruby-debug'
+    end 
   gem 'rspec-rails', '2.5.0'
 end
 
