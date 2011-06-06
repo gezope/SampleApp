@@ -5,5 +5,5 @@
   sample application.
 </p>
 
-<%= link_to "Sign up", "#", :class => "signup button round"  %>
+<%= link_to "Sign up", "#", :class => "signup_button round"  %>
 
