@@ -3,6 +3,7 @@
   <head>
     <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
     <%= csrf_meta_tag %>
+    <%= render 'layouts/stylesheets' %>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -18,6 +19,7 @@
         <nav class="round">
           <ul>
             <li><%= link_to "Home", '#' %></li>
+            <li><%= link_to "Contact", '#' %></li>
             <li><%= link_to "Help", '#' %></li>
             <li><%= link_to "Sign in", '#' %></li>
           </ul>
