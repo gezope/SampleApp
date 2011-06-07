@@ -13,6 +13,7 @@ end
 
 group :development, do
   gem 'rspec-rails', '2.5.0'
+  gem 'annotate-models'
 end
 
 
