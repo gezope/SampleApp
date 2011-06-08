@@ -67,14 +67,13 @@ describe User do
     end
     
     it "should rewuire a matching password confirmation" do
-      User.new(@attr.merge(:password_confirmation => "invalid"))
-    
+      User.new(@attr.merge(:password_confirmation => "invalid")).should_not be_valid
     end
     
     it "should reject short passwords" do
-      too_short = "a"*5
-      helpful_hash = @attr.merge(:password => too_short, :password_confirmation => too_short)
-      User.new(helpful_hash)should_not be_valid
+      short = "a" * 5
+      hash = @attr.merge(:password => short, :password_confirmation => short)
+      User.new(hash).should_not be_valid
     end
     
     it "should reject long passwords" do
@@ -82,31 +81,6 @@ describe User do
       helpful_hash = @attr.merge(:password => too_long, :password_confirmation => too_long)
       User.new(helpful_hash).should_not be_valid
     end
-    
   end
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
 end
