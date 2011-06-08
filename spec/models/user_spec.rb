@@ -90,30 +90,10 @@ describe User do
     end
   
     it "should have encrypted password" do
-      @user.should repond_to(:encrypted_password)
+      @user.should respond_to(:encrypted_password)
     end
   
   
   end
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+   
 end

@@ -89,8 +89,8 @@ describe User do
       @user = User.create!(@attr)
     end
   
-    it "" do
-    
+    it "should have encrypted password" do
+      @user.should respond_to(:encrypted_password)
     end
   
   
