@@ -10,5 +10,5 @@ describe User do
     User.create!(@attr)
   end
 
-  it "should require a name"
+
 end
