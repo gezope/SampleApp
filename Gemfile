@@ -5,13 +5,13 @@ gem 'sqlite3'
 gem 'thin'
 gem 'haml'
 
-group :test, do 
+group :test do 
   gem 'rspec', '2.5.0'
   gem 'webrat'
   gem 'spork'
 end
 
-group :development, do
+group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'annotate-models'
 end
