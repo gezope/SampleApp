@@ -82,7 +82,7 @@ describe User do
       User.new(helpful_hash).should_not be_valid
     end
   end
-  
+
   describe "password encryption" do
   
     before(:each) do
@@ -97,17 +97,17 @@ describe User do
       @user.encrypted_password.should_not be_blank
     end
     
-#    desribe "has_password? method" do
+    describe "has_password? method" do
       
- #     it "should be true if passwords match" do
-  #      @user.has_password?(@attr[:password]).should be_true
-   #   end
+      it "should be true if passwords match" do
+        @user.has_password?(@attr[:password]).should be_true
+      end
       
-    #  it "should be false if passwords dont match" do
-     #   @user.has_password?("invalid").should be_false
-      #end
+      it "should be false if passwords dont match" do
+        @user.has_password?("invalid").should be_false
+      end
     
-#    end
+    end
   
   end
 
