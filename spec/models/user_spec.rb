@@ -87,28 +87,47 @@ describe User do
   
     before(:each) do
       @user = User.create!(@attr)
-    end
+    end #before
   
     it "should have encrypted password" do
       @user.should respond_to(:encrypted_password)
-    end
+    end #"should have encrypted password"
  
     it "should set the encrypted password" do
       @user.encrypted_password.should_not be_blank
-    end
+    end #"should set the encrypted password"
     
     describe "has_password? method" do
       
       it "should be true if passwords match" do
         @user.has_password?(@attr[:password]).should be_true
-      end
+      end #"should be true if passwords match"
       
       it "should be false if passwords dont match" do
         @user.has_password?("invalid").should be_false
-      end
+      end #"should be false if passwords dont match"
     
-    end
+    end #"has_password? method"
   
-  end
+    describe "authenticate method" do
+    
+      it "should return nil on email/password mismatch" do
+        wrong_password_user = User.authenticate(@attr[:email], "wrongpass")
+        wrong_password_user.should be_nil
+      end # "should return nil on email/password mismatch"
+      
+      it "should return nil for an email address with no user" do
+        nonexistent_user = User.authenticate("bar@foo.com", @attr[:password])
+        nonexistent_user.should be_nil
+      end # "should return nil for an email address with no user"
+      
+      it "should return the user on email/password match" do
+        matching_user = User.authenticate(@attr[:email], @attr[:password])
+        matching_user.should == @user
+      end #"should return the user on email/password match"
+    
+    end #"authenticate method"
+  
+  end #"password encryption"
 
-end
+end #User do
